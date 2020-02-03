@@ -69,6 +69,7 @@ class Client extends EventEmitter {
       api.on("error", (err) => {
         console.error("An error was detected:");
         console.error(err);
+        api.stopListening();
         this.emit('error', err);
       });
 
